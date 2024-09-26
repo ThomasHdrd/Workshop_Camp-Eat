@@ -7,36 +7,36 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $firstName = $_POST['firstName'];         // Récupère le prénom de l'utilisateur
     $phone = $_POST['phone'];                 // Récupère le numéro de téléphone de l'utilisateur
     $mail = $_POST['mail'];                   // Récupère l'adresse e-mail de l'utilisateur
-    $password = password_hash($_POST['password'], PASSWORD_DEFAULT); // Hachage sécurisé du mot de passe pour stocker en base
+    $password = password_hash($_POST['password'], PASSWORD_DEFAULT); // Hachage sécurisé 
 
     // Informations de connexion à la base de données
-    $dsn = 'mysql:host=localhost;dbname=basedd_test;charset=utf8mb4'; // DSN (Data Source Name), contient l'hôte, la base de données, et l'encodage des caractères
-    $username = 'root';       // Nom d'utilisateur de la base de données (par défaut, root en local)
-    $dbpassword = '';         // Mot de passe de la base de données (vide par défaut sur un serveur local comme XAMPP)
+    $dsn = 'mysql:host=localhost;dbname=basedd_test;charset=utf8mb4'; // Chaîne de connexion à la base de données
+    $username = 'root';     // Nom d'utilisateur de la base de données (root = serveur local)
+    $dbpassword = '';       // Mot de passe de la base de données (vide par défaut (XAMPP))
 
     try {
-        // Création d'une connexion à la base de données via PDO
+        // Création d'une connexion à la base de données avec PDO (permet à PHP de se connecter avec des bases de données)
         $pdo = new PDO($dsn, $username, $dbpassword);
-        // Active le mode d'erreur pour lever une exception en cas de problème
+
+        // Définir le mode d'erreur PDO
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-        // Préparation de la requête d'insertion pour ajouter un nouvel utilisateur
+        // Récupération du résultat de la requête sous forme associative (stocker des données avec des clés personnalisées)
         $stmt = $pdo->prepare("INSERT INTO utilisateurs (nom, prenom, telephone, email, mot_de_passe) VALUES (?, ?, ?, ?, ?)");
 
-        // Exécution de la requête préparée avec les données utilisateur
-        if ($stmt->execute([$name, $firstName, $phone, $mail, $password])) {
-            // Si l'insertion réussit, on renvoie une réponse JSON indiquant le succès
+         // Requête préparée avec les variables prédéfini auparavant
+         ($stmt->execute([$name, $firstName, $phone, $mail, $password])) {
+             // Si la requête est réussie, renvoyer une réponse JSON indiquant "Inscriptipn réussie !"
             echo json_encode(["success" => true, "message" => "Inscription réussie !"]);
         } else {
-            // Si l'insertion échoue, on renvoie une réponse JSON avec un message d'erreur
+            // Si requête échoue, renvoyer une réponse JSON avec un message "Erreur lors de l'inscription."
             echo json_encode(["success" => false, "message" => "Erreur lors de l'inscription."]);
         }
-
-        // Terminer le script après avoir renvoyé la réponse JSON
         exit;
 
+        // Affiche toute erreur de connexion ou d'exécution
     } catch (PDOException $e) {
-        // Si une erreur liée à la base de données survient, on affiche un message d'erreur
+        // En cas d'erreur, affiche le message d'erreur PDO
         echo "Erreur : " . $e->getMessage();
     }
 }
