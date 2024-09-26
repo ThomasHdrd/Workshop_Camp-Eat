@@ -1,0 +1,457 @@
+
+:root{
+    --color-button-background: white;
+    --color-button-background-hover: #c4b702;
+    --color-button-font-color: #c4b702;
+    --color-button-font-color-hover: white;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    caret-color: transparent;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    position: relative;
+    font-family: sans-serif;
+}
+
+nav {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    background-color: var(--color-button-background);
+    z-index:1;
+}
+
+h1 {
+    font-family: 'Poppins';
+    font-weight: 500;
+    text-align: center;
+    margin: 2rem 0 2rem 0;
+    text-transform: uppercase;
+}
+
+h4 {
+    font-weight: 500;
+    padding-bottom: 2rem;
+}
+
+p {
+    font-size: 18px;
+    padding: 12px;
+}
+
+.logo {
+    justify-self: center;
+    display: flex;
+    justify-content: row;
+    font-weight: bold;
+    font-size: 20px;
+}
+#eat {
+    color: green;
+}
+
+
+/*main {
+    width: 100%;
+    height: 100vh;
+    overflow: auto;
+    line-height: 2rem;
+    font-size: 20px;
+    padding: 2rem 5vw;
+    text-align: justify;
+    position: absolute;
+} */
+
+
+main {
+    width: 100%;
+    height: 100vh;
+    overflow: auto;
+    line-height: 2rem;
+    font-size: 20px;
+    padding: 2rem 5vw;
+    text-align:center;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    background-color: rgba(196, 183, 2, 0.40);
+}
+
+/* BUTTON */
+button {
+    background-color: var(--color-button-background); /* Couleur de fond */
+    border: none; /* Supprime la bordure par défaut */
+    color: var(--color-button-font-color); /* Couleur du texte */
+    padding: 10px 15px; /* Espacement interne */
+    text-align: center; /* Alignement du texte */
+    text-decoration: none; /* Supprime le soulignement */
+    display: inline-block;
+    font-size: 20px;
+    margin: 4px 2px;
+    cursor: pointer; /* Curseur en forme de main au survol */
+    border-radius: 999px; /* Arrondit les coins */
+}
+
+/*Button */
+.microOndeBtn, .foodTruckBtn, .jourBtnFT, .jourBtn{
+    text-transform: uppercase;
+    padding: 10px;
+    font-size: 22px;
+    margin-bottom: 30px;
+    border: 2px solid transparent;
+} 
+/*Hover*/
+.microOndeBtn:hover, .foodTruckBtn:hover, .jourBtnFT:hover, .jourBtn:hover{
+    text-transform: uppercase;
+    color: var(--color-button-font-color-hover); /*color text*/
+    background-color: var(--color-button-background-hover); /*background color*/
+    padding: 10px;
+    font-size: 22px;
+    margin-bottom: 30px;
+    border: 2px solid white;
+}
+
+.listeProp {
+    display: flex;
+    flex-direction: column;
+    height: 60%;
+    justify-content: space-between;
+}
+
+.horaires {
+    display: grid;
+}
+
+/*Button welcome page*/
+#signUserBtn, #connectUserBtn, #connectCommercantBtn {
+    background-color: var(--color-button-background);
+}
+/*hover*/
+#signUserBtn:hover, #connectUserBtn:hover, #connectCommercantBtn:hover, .accueilBtn:hover {
+    background-color: var(--color-button-background-hover);
+    border: 2px solid white;
+    color: var(--color-button-font-color-hover);
+}
+
+/*RESERVER BTN*/ 
+#reserverBtn {
+    display: none;
+    color: var(--color-button-background);
+    background-color: var(--color-button-background-hover);
+    align-items: center;
+}
+
+
+#reserverBtn:hover {
+    display: none;
+    background-color: var(--color-button-background);
+    color: var(--color-button-background-hover);
+    align-items: center;
+    border: 2px solid var(--color-button-background-hover);
+}
+
+#jourBtnReserveFT {
+    color: var(--color-button-background);
+    background-color: var(--color-button-background-hover);
+}
+/*HOURS BTN*/
+.hourBtn:focus {
+    background-color: var(--color-button-background);
+    color: var(--color-button-background-hover);
+    border: 2px solid var(--color-button-background-hover);
+}
+
+.hourBtn {
+    background-color: var(--color-button-background-hover);
+    color: white;
+    font-size: 26px;
+}
+
+.hourBtn:hover {
+    background-color: var(--color-button-background);
+    color: var(--color-button-background-hover);
+    border: 2px solid var(--color-button-background-hover);
+}
+
+/* MENU FT */
+#menuFT-Burger, #menuFT-Salade {
+    background-color: var(--color-button-background);
+    display: flex;
+    flex-direction: column;
+    padding: 10px 50px;
+}
+
+/* MENU FOOD TRUCK */
+#JourBtnReserveFT {
+    background-color: var(--color-button-background-hover);
+    color: var(--color-button-background);
+}
+
+#JourBtnReserveFT:hover {
+    color: var(--color-button-background-hover);
+    background-color: var(--color-button-background);
+    border: 2px solid var(--color-button-background-hover);
+}
+
+/* HORAIRE */
+#JourPage, #ValidationPageFT,#jourConfirm {
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.listeHours {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    grid-template-rows: repeat(3, auto);   /* 3 rows */
+    gap: 5px;                              /* Space between items */
+    padding: 10px;
+}
+
+/* VALID PAGE */
+#confirmJour {
+    text-align: center;
+}
+
+.validPage {
+    background-color: var(--color-button-font-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 50px 20px;
+    border-radius: 50px;
+}
+
+/*BOUTONS VALIDATION PAGE*/
+
+    /*Button Valid*/
+#buttonValid {
+    background-color: green;
+    color: var(--color-button-background);
+    font-weight: 400;
+    margin-top: 60px;
+    width: 100%;
+}
+
+#buttonValid:hover {
+    color: green;
+    background-color: white;
+    border: 2px solid green;
+}
+
+  /*Button Annule*/
+#buttonAnnule {
+    background-color: red;
+    color: var(--color-button-background);
+    font-weight: 400;
+}
+
+#buttonAnnule:hover {
+    color: red;
+    background-color: white;
+    border: 2px solid red;
+}
+/**/
+
+
+#buttonContainer {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 50px;
+}
+
+
+/* CONFIRM PAGE */
+p {
+    text-align: center;
+}
+
+#ConfirmPage {
+    background-color: var(--color-button-background-hover);
+    padding: 5% 5%;
+    width: 90vw;
+    margin-top: 15px;    
+}
+
+.icon-container i {
+    font-size: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 30px;
+}
+
+/* MES RESERVATIONS */
+#mes-reservations {
+    background-color: #a0a0a0;
+    width: 90vw;
+    margin-top: 15px; 
+}
+
+
+main::-webkit-scrollbar {
+    background-color: #dedede;
+    width: 0.5rem;
+}
+main::-webkit-scrollbar-thumb {
+    background-color: lightcoral;
+}
+
+.nav-lateral {
+    position: absolute;
+    top: 0;
+    background-color: gray;
+    z-index: 3;
+    height: 100vh;
+    width: 100vw;
+    transition: 0.2s ease;
+    left: +100%;
+}
+#nav-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    /*background-color: rgba(0, 0, 0, 0.6);*/
+    z-index: 2;
+    display: none;
+}
+#nav-wrapper.active {
+    display: block;
+}
+#nav-close {
+    margin-bottom: 4rem ;
+    background-color: red;
+}
+
+.nav-links {
+    padding: 1rem 6rem 1rem 3rem;
+}
+.nav-link {
+    cursor: pointer;
+    font-size: 25px;
+    margin-bottom: 50px;
+    display: flex;
+    align-items: center;
+}
+
+
+.nav-link ion-icon {
+    margin-right: 15px;
+}
+
+.nav-link, .nav-button {
+    transition: 0.2s ease;
+}
+
+.nav-button {
+    font-size: 40px;
+    cursor: pointer;
+    height: 50px;
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*background-color: blue;*/
+    position: absolute;
+    top : 0;
+    right : 0;
+}
+
+.nav-button:hover {
+    background-color: #dedede;
+    color: lightcoral;
+}
+
+
+/* BASE DE DONNEES */
+
+/*test*/
+
+form{
+position: relative;
+width: 100%;
+top:50%;
+left: 50%;
+transform: translate(-50%,-50%);
+}
+.text-field{
+position: relative;
+padding: 0 0 40px;
+caret-color: auto;
+
+}
+
+.text-field input{
+width: 100%;
+height: 40px;
+font-size: 20px;
+border: none;
+background: none;
+outline: none;
+border-bottom: solid white 2px;
+caret-color: auto;
+}
+
+.text-field label{
+position: absolute;
+top: 25%;
+left: 3px;
+color: white;
+transform: translateY(-50%);
+font-size: 20px;
+pointer-events: none;
+transition: 0.5s;
+}
+
+span::before{
+content: '';
+position: absolute;
+top:38px;
+left: 0;
+width: 0%;
+height: 2px;
+background-color:var(--color-button-font-color) ;
+transition: 0.5s;
+}
+
+input:focus ~ label,
+input:valid ~ label{
+top: -7px;
+color: var(--color-button-font-color);
+}
+
+input:focus ~ span::before,
+input:valid ~ span::before{
+width: 100%;
+}
+
+button[type="button"]{
+width: 100%;
+height: 40px;
+border-radius: 999px;
+background-color:green ;
+border: none;
+transition: 0.5s;
+cursor: pointer;
+margin-top: 40px; 
+}
+button[type="button"]:hover{
+background-color:green ;
+transform: scale(1.05);
+}
+/* FIN TEST */

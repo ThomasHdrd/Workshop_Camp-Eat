@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+        <title>Document</title>
+
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        
+        <div id="nav-lateral" class="nav-lateral">
+            <div id="nav-close" class="nav-button">
+                <ion-icon name="close"></ion-icon>
+            </div>
+            <div class="nav-links">
+                <div class="nav-link accueilBtn">
+                    <ion-icon name="home"></ion-icon>
+                    Page d'accueil
+                </div>
+                <div class="nav-link microOndeBtn">
+                    <ion-icon name="person"></ion-icon>
+                    Micro-ondes
+                </div>
+                <div class="nav-link foodTruckBtn" id="">
+                    <ion-icon name="settings"></ion-icon>
+                    Food-Truck
+                </div>
+            </div>
+
+        </div>
+        <div id="nav-wrapper"></div>
+        <nav>
+            <div id="logo" class="logo accueilBtn"> <img src="images/logo.png" alt=""></div>
+            <div id="nav-open" class="nav-button" style="display: none;">
+                <ion-icon name="reorder-three"></ion-icon>
+            </div>
+            
+        </nav>
+
+<!-- 1 - WELCOME PAGE -->
+        <main id ="welcomePage">
+            <div class="titre">BIENVENUE SUR CAMP'EAT !</div>
+            <br>
+            <div class="listeProp">
+                <div class="validPage">
+                    <h2>UTILISATEUR</h2>
+                    <br>
+                    <button id="signUserBtn">VOUS INSCRIRE</button>
+                    <button id="connectUserBtn">VOUS CONNECTER</button>
+                </div>
+                <div class="validPage">
+                    <h2>COMMERCANT</h2>
+                    <form action="get_order_count.php" id="getOrderCount">
+                        <button id="connectFTBtn">VOUS CONNECTER</button>
+                    </form>
+                    
+                </div>
+            </div>
+        </main>
+
+        <main id="foodTruckInfoPage">
+            <div class="titre">Nombre de commandes :</div>
+            <div class="listeProp" id="nbCommande">
+                test
+            </div>
+        </main>
+
+<!-- 2. PAGE D'INSCRIPTION -->
+        <main id ="signPage">
+            <h2 style="margin-bottom:15% ;">INSCRIVEZ-VOUS</h2>
+            <div class="listeProp">
+                <form id= "inscriptionForm" method="post" action="inscription.php">
+                    <div class="text-field">
+                        <input type="text" required id="name" name="name">
+                        <span></span>
+                        <label>Nom</label>
+                    </div>
+                    <div class="text-field">
+                        <input type="text" required id="firstName" name="firstName">
+                        <span></span>
+                        <label>Prénom</label>
+                    </div>
+                    <div class="text-field">
+                        <input type="tel" required id="phone" name="phone" pattern="[0-9]{}">
+                        <span></span>
+                        <label>Numéro de téléphone</label>
+                    </div>
+                    <div class="text-field">
+                        <input type="email" required id="mail" name="mail">
+                        <span></span>
+                        <label>Adresse Mail</label>
+                    </div>
+                    <div class="text-field">
+                        <input type="password" required id="password" name="password">
+                        <span></span>
+                        <label>Mot de passe</label>
+                    </div>
+                    <button class="accueilBtn" type="submit" id="inscriptionBtn">S'inscrire</button>
+                </form>
+                
+            </div>
+        </main>
+
+    
+<!-- 3. PAGE DE CONNEXION -->
+        <main id ="loginPage">
+            <div class="listeProp">
+                <form  method="post" action="">
+                    
+                    <div class="text-field">
+                        <input type="email" required id="mail" name="mail">
+                        <span></span>
+                        <label>Adresse Mail</label>
+                    </div>
+                    <div class="text-field">
+                        <input type="password" required id="password" name="password">
+                        <span></span>
+                        <label>Mot de passe</label>
+                    </div>
+                    <button class="accueilBtn" type="submit" id="loginUserBtn">Connexion</button>
+                </form>
+            </div>
+        </main>
+
+
+<!-- 3. CONNEXION COMMERCANT -->
+
+<main id ="signPageFT">
+    <h2 style="margin-bottom:15% ;">Connectez vous</h2>
+    <div class="listeProp">
+        <form id= "inscriptionFormFT" method="post" action="">
+            <div class="text-field">
+                <input type="text" required id="name" name="name">
+                <span></span>
+                <label>Nom</label>
+            </div>
+            <div class="text-field">
+                <input type="text" required id="firstName" name="firstName">
+                <span></span>
+                <label>Prénom</label>
+            </div>
+            <div class="text-field">
+                <input type="tel" required id="phone" name="phone" pattern="[0-9]{10}">
+                <span></span>
+                <label>Numéro de téléphone</label>
+            </div>
+            <div class="text-field">
+                <input type="text" required id="mail" name="mail">
+                <span></span>
+                <label>Nom de l'entreprise</label>
+            </div>
+            <div class="text-field">
+                <input type="password" required id="password" name="password">
+                <span></span>
+                <label>Mot de passe</label>
+            </div>
+            <button class="accueilBtn" type="submit" id="inscriptionBtnFT">S'inscrire</button>
+        </form>
+        
+    </div>
+</main>
+
+<!-- 4. PAGE DE BIENVENUE : Une fois connecté -->
+        <main id ="homePage">
+            <h1 style="line-height: 1.5;">BIENVENUE SUR CAMP'EAT !</h1>
+            <button class="btn microOndeBtn">Reserver Micro-ondes</button>
+            <button class="btn foodTruckBtn">Reserver Food-Truck</button>
+        </main>
+
+
+<!-- 5.1 - PAGE MICRO ONDE -->
+        <main id ="microOndePage">
+            <div>Résérver Micro-Ondes</div>
+            <div class = "listeProp">
+                <button class = "jourBtn" id="lundi">Lundi</button>
+                <button class = "jourBtn" id="mardi">Mardi</button>
+                <button class = "jourBtn" id="mercredi">Mercredi</button>
+                <button class = "jourBtn" id="jeudi">Jeudi</button>
+                <button class = "jourBtn" id="vendredi">Vendredi</button>
+            </div>
+        </main>
+
+<!-- 5.2 - PAGE FOOD TRUCK -->
+        <main id ="foodTruckPage">
+            <div style="text-align: center;">RÉSERVER FOOD TRUCK</div><br>
+            <div style="text-align: center;">Pour commencer, veuillez choisir votre jour de réservation</div><br>
+            <div class = "listeProp">
+                <button class="jourBtnFT"  id="Lundi">Lundi</button>
+                <button class="jourBtnFT"  id="Mardi">Mardi</button>
+                <button class="jourBtnFT"  id="Mercredi">Mercredi</button>
+                <button class="jourBtnFT"  id="Jeudi">Jeudi</button>
+                <button class="jourBtnFT"  id="Vendredi">Vendredi</button>
+            </div>
+        </main>
+
+
+<!-- 6 - PAGE MENU FOOD TRUCK -->
+        <main id="menuFoodTruck">
+            <h1 style="text-align: center;" class="jourPrecis">Lundi</h1><br>
+            <div style="text-align: center;">Nom du food-truck</div>
+            <img src="" alt=""><br></img>
+            <div id="menuFT-Burger">
+                <div style="text-align: center;">Menu Burger -> 10 restants</div><br>
+                <div style="text-align: center;">Description du menu</div><br>
+                <button class="jourBtn" id="jourBtnReserveFT">RÉSERVER</button>
+            </div><br><br>
+            <div id="menuFT-Salade">
+                <div style="text-align: center;">Menu Salade -> 15 restants</div><br>
+                <div style="text-align: center;">Description du menu</div><br>
+                <button class="jourBtn" id="jourBtnReserveFT">RÉSERVER</button>
+            </div>
+        </main>
+
+
+
+<!-- 7 - PAGE HORAIRE GLOBAL -->
+        <main id="JourPage">
+            <h6 class="menu" style="display: none;"></h6>
+            <div>Choisissez votre heure de réservation</div>
+            <div>12H</div>
+            <div class="listeHours">
+                <button id = "12:00" class="hourBtn">12 : 00</button>
+                <button id = "12:10" class="hourBtn">12 : 10</button>
+                <button id = "12:20" class="hourBtn">12 : 20</button>
+                <button id = "12:30" class="hourBtn">12 : 30</button>
+                <button id = "12:40" class="hourBtn">12 : 40</button>
+                <button id = "12:50" class="hourBtn">12 : 50</button>
+            </div><br>
+            <div>13H</div>
+            <div class="listeHours">
+                <button id = "13:00" class="hourBtn">13 : 00</button>
+                <button id = "13:10" class="hourBtn">13 : 10</button>
+                <button id = "13:20" class="hourBtn">13 : 20</button>
+                <button id = "13:30" class="hourBtn">13 : 30</button>
+                <button id = "13:40" class="hourBtn">13 : 40</button>
+                <button id = "13:50" class="hourBtn">13 : 50</button>
+            </div>
+            <div style="display: flex;justify-content: center;">
+                <button id="reserverBtn">Réserver</button>
+            </div>
+        </main>
+
+<!-- 8 - PAGE VALIDATION GLOABAL -->
+        <main id="ValidationPageFT">
+            <h6 class="menu" style="display: none;"></h6>
+            <br><br><br>
+            <div style="text-align: center;">VOUS AVEZ RÉSERVÉ POUR</div>
+            <div class="validPage">
+                <h1 id="hourPrecisValid">13 : 00</h1>
+            </div><br>
+            <div style="text-align: center;">SOUHAITEZ VOUS CONFIRMER ?</div>
+            <div id="buttonContainer">
+                <form action="commande.php" method="post" id="commandeForm">
+                    <button id="buttonValid" type="submit">VALIDER</button>
+                </form>
+                
+                
+                <button class ="jourBtn" id="buttonAnnule">ANNULER</button>
+            </div>
+        </main>
+
+
+<!-- 9 - PAGE CONFIRMATION -->
+        <main id="confirmPageFT">
+            <h6 class="menu" style="display: none;"></h6>
+            <div style="text-align: center;">NOM PRENOM</div>
+            <div id="ConfirmPage" class="icon-container">
+                <p>HORAIRE CONFIRMÉE</p><br>
+                <i class="fas fa-utensils"></i>
+                <h1 id ="hourConfirm">13 : 00</h1>
+            </div>
+            <p style="margin-top: 30px;">VEUILLEZ VOUS PRÉSENTER AVEC VOTRE NOM</p>
+        </main>
+
+
+<!-- 10 - PAGE TOUTES RESERVATIONS -->
+        <main id="toutesReservations">
+            <div style="text-align: center;">MES RÉSERVATIONS</div><br>
+            <div style="text-align: center;">LUNDI</div>
+            <div id="mes-reservations">
+                <h1 id="heure-reserve">13 : 00</h1>
+            </div><br>
+            <div style="text-align: center;">MARDI</div>
+            <div id="mes-reservations">
+                <h1 id="heure-reserve">12 : 50</h1>
+            </div><br>
+        </main>
+            
+        <script src="app.js"></script>
+        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    </body>
+</html>
